@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="loginpage.css" />
-  <link rel="icon" href="tiku01.jpg">
+  <link rel="icon" href="images/food07.jpg">
   <title>food online/login</title>
   <link rel="icon" href="tiku.jpg" />
 </head>

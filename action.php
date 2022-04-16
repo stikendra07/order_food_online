@@ -8,12 +8,12 @@ if (isset($_POST["submit"])) {
 
     $db = mysqli_connect("localhost", "root", "");
     mysqli_select_db($db, "food_odering_system");
-    mysqli_query($db, "insert into registration_detail values('$username','$dob','$password','$email','$contact')");
-    mysqli_query($db, "insert into user_login_details values('$username','$password')");
+    mysqli_query($db, "insert into registration_detail values('$username','$dob','$email','$contact')");
+    mysqli_query($db, "insert into user_login_details values('$email','$password','user','active')");
     $rem = mysqli_affected_rows($db);
     if ($rem) {
-        echo "your form submitted successfully";
-        header("location:homepage.html");
+       header("location:homepage.php?flag=0");;
+        
     }
     mysqli_close($db);
 }

@@ -54,7 +54,7 @@ body {
     ),
     url(tiku01.jpg);
   background-size: 100% 100%;
-  padding: 120px;
+  padding: 130px;
   position: relative;
   box-shadow: 0 10px 20px -6px #000;
   position: relative;
@@ -85,7 +85,7 @@ p {
 .search-box {
   outline: none;
   border-radius: 10px;
-  padding: 5px 15px;
+  padding: 10px 15px;
   width: 100%;
   border: 1px solid var(--main-color);
 }
@@ -156,15 +156,15 @@ a {
 }
 .card-main {
   position: absolute;
-  top: 300px;
-  left: 160px;
+  top: 310px;
+  left: 170px;
   display: flex;
   margin: 0 10px;
 }
 .card {
   position: relative;
   width: 280px;
-  height: 150px;
+  height: 200px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
   padding: 30px 50px;
   margin: 0 10px;
@@ -224,7 +224,8 @@ h3 {
   color: var(--blue-dark);
 }
 .puri-chole {
-  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 0;
 }
 .puri {
@@ -236,7 +237,7 @@ h3 {
   border-radius: 10px;
   width: 80%;
   height: 300px;
-  margin-left: 150px;
+  margin-left: 170px;
   margin-bottom: 30px;
 }
 .img-puri {
@@ -268,7 +269,7 @@ h3 {
   left: 35px;
 }
 .non-veg {
-  margin: 0;
+  margin-left: 40px;
   padding: 0;
 }
 .non-veg-box {
