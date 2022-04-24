@@ -1,6 +1,6 @@
 /* --------Variables--------- */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Roboto:wght@300&family=Square+Peg&display=swap");
 :root {
   --main-color: #e02f6b;
   --blue: #0000ff;
@@ -14,36 +14,24 @@
   --white-alpha-25: rgba(255, 255, 255, 0.25);
   --backdrop-filter-blur: blur(5px);
 }
-/* global setting  */
 
+/* global setting  */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  outline: none;
 }
 body {
-  min-height: 100vh;
+  height: auto;
   overflow-x: hidden;
-  background-attachment: fixed;
 }
-
-.row {
-  margin: 0 40px;
-  padding: 0 36px;
-  width: 100%;
-  height: 70vh;
+.container {
+  /* background-color: red; */
+  text-align: center;
 }
 .header {
   position: relative;
-  margin: 0 120px;
-  width: 80%;
-  height: 70vh;
 }
-.container a {
-  text-decoration: non;
-}
-
 .bg-img {
   content: "";
   vertical-align: middle;
@@ -68,6 +56,11 @@ body {
   color: var(--main-color);
   font-size: 24px;
 }
+h1 {
+  font-size: 34px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
 p {
   position: relative;
   left: 60px;
@@ -80,12 +73,13 @@ p {
 .search {
   position: relative;
   left: 20px;
-  top: 80px;
+  top: 60px;
 }
 .search-box {
   outline: none;
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 0 10px;
+  margin: 0 40px;
   width: 100%;
   border: 1px solid var(--main-color);
 }
@@ -109,7 +103,6 @@ p {
 a {
   text-decoration: none;
 }
-
 .btn {
   line-height: 1.5;
   background-color: var(--white-alpha-25);
@@ -154,17 +147,13 @@ a {
   user-select: none;
   z-index: 1;
 }
-.card-main {
-  position: absolute;
-  top: 310px;
-  left: 170px;
-  display: flex;
-  margin: 0 10px;
+.col-lg-3 {
+  margin: 50px 0;
 }
 .card {
   position: relative;
-  width: 280px;
-  height: 200px;
+  width: 300px;
+  height: 190px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
   padding: 30px 50px;
   margin: 0 10px;
@@ -218,87 +207,115 @@ h3 {
   color: var(--main-color);
   font-family: inherit;
   padding: 10px 0;
+  font-size: 24px;
   font-weight: 600;
 }
 .card h5 {
   color: var(--blue-dark);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
 }
-.puri-chole {
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 0;
-}
-.puri {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--white-alpha-40);
+.all-in-one {
+  border: 1px solid var(--white-alpha-40);
+  margin: 10px 0;
+  border-radius: 20px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+.puri-aloo {
+  margin: 0px 0;
+  height: 50vh;
+  background-color: var(--white-alpha-40);
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); */
   border-radius: 10px;
-  width: 80%;
-  height: 300px;
-  margin-left: 170px;
-  margin-bottom: 30px;
 }
 .img-puri {
   width: 20%;
   position: absolute;
-  transform: translateX(-350px);
+  transform: translateX(-500px);
+  margin: 70px 0;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
 }
 .discount {
-  margin: 0;
+  margin: 70px 0;
   padding: 0;
   position: absolute;
-  transform: translateX(150px);
+  transform: translateX(700px);
 }
 .discount a {
   text-decoration: none;
   color: var(--main-color);
 }
 .title-text {
-  font-size: 30px;
+  margin: 0;
+  font-size: 38px;
   text-transform: capitalize;
-  font-weight: 300;
+  font-size: 52px;
+  font-weight: 600;
+  font-family: "Square Peg", cursive;
 }
 .title-description {
-  font-size: 20px;
+  font-size: 32px;
   text-transform: capitalize;
+  font-family: "Square Peg", cursive;
+  font-weight: 500;
+}
+.abc {
+  background-color: var(--white-alpha-25);
+  height: 60vh;
+  margin-bottom: 30px;
+  /* border: 1px solid var(--blue-dark); */
+  border-radius: 20px;
+}
+.indian-food {
+  height: 50vh;
+  opacity: 99;
+  margin: 0;
+}
+.col-lg-8 {
   position: relative;
-  top: 20px;
-  left: 35px;
 }
-.non-veg {
-  margin-left: 40px;
-  padding: 0;
+.h3text {
+  margin-top: 100px;
+  padding-top: 40px;
+  font-size: 52px;
+  font-weight: 600;
+  font-family: "Square Peg", cursive;
+  cursor: pointer;
 }
-.non-veg-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
+hr {
+  width: 75%;
+  margin-left: 80px;
 }
-.img-set {
-  width: 80%;
-  height: 400px;
+h4 {
+  font-size: 36px;
+  font-weight: 500;
+  font-family: "Square Peg", cursive;
+  color: var(--blue-dark);
+  cursor: pointer;
 }
-
-/* footer Start*/
-.footer {
-  background-color: #003366;
+.indian-cook {
+  float: left;
+  margin: 45px 0;
+  width: 70%;
+  height: 40vh;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
-footer {
-  height: 150px;
+.container-fluid {
+  height: 40vh;
+  background-color: #0077be;
+}
+.yu_12 {
+  text-transform: capitalize;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0;
-  font-size: 28px;
-  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
-.social-icon {
+.yu_123 {
+  text-transform: capitalize;
   color: #fff;
-  z-index: 99;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
 }
-/* footer End */

@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0 5px;
+  overflow-x: hidden;
+}
+.container-fluid {
+  padding: 0;
+}
+.row {
+}
+.col-lg-3 {
+  height: 90vh;
+}
+.col-lg-9 {
+  height: 50vh;
+  float: right;
+}
+.user-panel {
+  margin: 10px 0;
+  width: 80%;
+  height: 90vh;
+  background-color: #d3d3d3;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 20px 0;
+  font-family: inherite;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #c9c0bb;
+}
+.text-panel {
+  text-transform: capitalize;
+  color: #e02f6b;
+  font-weight: bold;
+}
+.table {
+  /* position: absolute; */
+}
+.panel-table {
+  /* position: relative; */
+  top: 20px;
+  margin: 0;
+  padding: 5px 0;
+  list-style: none;
+}
+.panel-line {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 15px;
+  text-transform: capitalize;
+  color: #18293c;
+  cursor: pointer;
+  font-size: 16px;
+}
+.panel-line:hover {
+  border: 2px solid yellow;
+}
+.food-gallery {
+}
+.card {
+  margin: 10px 5px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #e02f6b;
+  cursor: pointer;
+  font-family: poppins, "sans-serif";
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+.card-title {
+  margin-top: 20px;
+  font-size: 22px;
+}
+.card-price {
+  color: #fff;
+  background-color: #e02f6b;
+}
+.card-discount {
+  color: #fff;
+  font-size: 12px;
+  background-color: green;
+  width: 30%;
+  margin-left: 3px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.qtyz {
+  width: 100%;
+  display: flex;
+  border: 1px solid green;
+  border-radius: 10px;
+  margin: 5px 0;
+  outline: none;
+  text-align: center;
+}
+.qtyz::placeholder {
+  text-align: center;
+  justify-content: center;
+}
+.btn {
+  display: inline;
+}
+form {
+  margin-top: 20px;
+}
+.form-control {
+  width: 50%;
+}

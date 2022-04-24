@@ -4,7 +4,7 @@
     if(!isset($_SESSION['loginid']))
     {
     echo "you are logged out";
-    header('location:homepage.php');
+    header('location:index.html');
 
     }
           $id=$_SESSION["loginid"];    
@@ -27,12 +27,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="user_page_css.css">
     <link rel="stylesheet" href="admin_css.css">
+    <link rel="icon" href="images/paytm.svg">
     <script src="https://kit.fontawesome.com/7ac2bd24b6.js" crossorigin="anonymous"></script>
 
 
-    <title>user/page</title>
+    <title>admin/page</title>
 
 
 
@@ -49,10 +50,10 @@
                 </h2>
                 <table class=table>
                     <ul class="panel-table">
-                        <li class="panel-line" id="home">home</li>
-                        <li class="panel-line" id="ChangePwd">change password</li>
-                        <li class="panel-line">add menu</li>
-                        <li class="panel-line">setting</li>
+                        <li class="panel-line active" data-target="1">home</li>
+                        <li class="panel-line" data-target="2">change password</li>
+                        <li class="panel-line"data-target="3">add menu</li>
+                        <li class="panel-line" data-target="4">setting</li>
                         <li class="panel-line" onclick="logout()">Logout</li>
                        
                     </ul>
@@ -63,31 +64,36 @@
 
 
 
-        <div class="crud">
+        <div class="crud hidden para1">
+            
+     <div class="form-outline" style="margin-top:20px">
+        <input type="text" id="getName" onkeyup="getname()"/><b> Search by name</b>
+    </div>
+               
             <div class="col-lg-12 col-md-8 col-sm-12" >
-                <div class="container">
+                <div class="container">     
               
                 <table>
                     <thead>
                         <tr>
                             <th classs="sno">sno</th>
                             <th>client name</th>
-                            <th>contact</th>
-                            <th>ordered food</th>
+                            <th>food name</th>
                             <th>quantity</th>
-                            <th>date</th>
-                            <th class="con">address</th>
-                            <th class="con">pincode</th>
+                            <th>price</th>
+                            <th>discount</th>
+                            <th>totalprice</th>
                             <th colspan="3">operation</th>
                         </tr>
                     </thead>
                     <tbody>
                         
           <?php
-                   
+                
+                $sno=1;   
                $db=mysqli_connect("localhost","root","");
                mysqli_select_db($db,'food_odering_system');
-               $result=mysqli_query($db, " select * from order_details");
+               $result=mysqli_query($db, " select * from order_childtb");
             
                $num = mysqli_num_rows($result);
                if($num > 0){
@@ -95,15 +101,14 @@
             while($row=mysqli_fetch_array($result))
         {
                 ?>
-                    <tr>
-                    <td><?php echo $row['sno']; ?></td>
-                    <td><?php echo $row['client_id']; ?></td>
-                    <td><?php echo $row['contact']; ?></td>
-                    <td><?php echo $row['food']; ?></td>
+                    <tr id="showname">
+                    <td><?php echo $sno++ ?></td>
+                    <td><?php echo $row['login_id']; ?></td>
+                    <td><?php echo $row['food_name']; ?></td>
                     <td><?php echo $row['qty']; ?></td>
-                    <td><?php echo $row['date']; ?></td>
-                    <td><?php echo $row['address']; ?></td>    
-                    <td><?php echo $row['pin']; ?></td>    
+                    <td><?php echo $row['price']; ?></td>
+                    <td><?php echo $row['dscnt']; ?></td>
+                    <td>&#8377;<?php echo $row['total_price']; ?></td>  
                     <td><a href="#" data-toggle="tooltip" data-placement="top" title="view">
                     <i class="fa-regular fa-eye eye"></i></a></td>                            
                     <td><a href="update.php" data-toggle="tooltip" data-placement="bottom" title="UPDATE">
@@ -119,12 +124,26 @@
                          </table>
                </div>
            </div>
-           
-       </div>
-       
 
-    <!-------Change Password---------->
-    <div class="change-password hidden">
+     <script>
+        function getname() {
+        var code = document.getElementById("getName").value;
+        var hmt = new XMLHttpRequest();
+        hmt.open("GET", "getname.php?code=" + code, true);
+        hmt.send();
+
+        hmt.onreadystatechange = function () {
+          if (hmt.readyState == 4 && hmt.status == 200) {
+            document.getElementById("showname").value = hmt.responseText;
+          
+          }
+        };
+      }
+           </script>
+       </div>
+
+    <!-----------------------Change Password Start----------------->
+    <div class="change-password hidden para2">
         <div class="col-lg-8 col-md-12 col-sm-12">
             <form style="padding-top:50px" ; method="post" action="chngePwd_code.php">
 
@@ -147,8 +166,12 @@
                     </div>
                 </form>
                  </div>
-    </div>
-    <div class="add-menu hidden">
+            </div>
+    <!-----------------------Change Password Start----------------->
+
+<!-- ------------Add Menu Start----------------- -->
+
+       <div class="add-menu hidden para3">
         <div class="col-lg-8 col-md-12 col-sm-12">
             <button class="btn">add category</button>
             <button class="btn">user feedback</button>
@@ -162,11 +185,16 @@
     </form>
         </div>
     </div>
-
+<!-- ----------------------------Add Menu End--------------------------- -->
 <script>
     function logout(){
         window.location.replace("logout_page.php");
        }
+   
+  $(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+  });
+
      
     </script>
     </div>
@@ -187,12 +215,9 @@
             }
             ?>
 
+<!-- javaScripts cdn link -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-
-    <script>
-  $(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
+  <script src="admin_js.js"></script>
 </body>
 </html>

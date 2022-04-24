@@ -1,9 +1,9 @@
-let btn = document.querySelector("button");
-let div = document.querySelector("add-menu");
-btn.addEventListener("click", () => {
-  if (div.style.display === "none") {
-    div.style.display = "block";
-  } else {
-    div.style.display = "none";
-  }
+$(() => {
+  $(".hidden").hide();
+  $(".para1").show();
+  $(".panel-line").click(function () {
+    $(".hidden").hide();
+    //all p hide and buton with show
+    $(".para" + $(this).attr("data-target")).show();
+  });
 });

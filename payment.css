@@ -1,0 +1,156 @@
+/* --------Variables--------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --main-color: #e02f6b;
+  --blue: #0000ff;
+  --blue-dark: #18293c;
+  --orange: #ffa500;
+  --green-yellow: #cdcc03;
+  --pink-light: #efa2b4;
+  --cyn-light: #aef1ee;
+  --white: #fff;
+  --white-alpha-40: rgba(255, 255, 255, 0.4);
+  --white-alpha-25: rgba(255, 255, 255, 0.25);
+  --backdrop-filter-blur: blur(5px);
+}
+li {
+  list-style: none;
+}
+.container {
+  height: 90vh;
+  border: 1px solid #004953;
+  position: relative;
+}
+.row {
+  /* text-align: center;
+  margin: 10px 0;
+  padding: 10px 0; */
+}
+.payment-getway {
+  color: var(--main-color);
+  font-family: nunito;
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border: 1px solid #004953;
+  text-transform: capitalize;
+}
+.payment-method {
+  text-transform: capitalize;
+  font-family: Libre Baskerville;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.div1 {
+  width: 30%;
+  background-color: #5f9ea0;
+  height: 70vh;
+  float: left;
+}
+.payment-option {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+}
+.panel-line {
+  margin-right: 10px;
+  width: 40px;
+  height: 20px;
+}
+.master-card {
+  width: 40%;
+  padding: 10px 0;
+}
+.upi {
+  padding-top: 15px;
+}
+.div2 {
+  width: 70%;
+  float: right;
+  height: 70vh;
+  border: 1px solid #004953;
+}
+form {
+  margin: 0 20px;
+}
+.form-control {
+  width: 80%;
+  border: 1px solid #004953;
+}
+.date {
+  width: 30%;
+}
+.cvv {
+  width: 40%;
+}
+.fa-keyboard {
+  cursor: pointer;
+}
+.div3 {
+  margin-top: 4px;
+}
+.orders {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 0;
+  text-transform: capitalize;
+  background-color: #acacac;
+}
+.order-details {
+  text-align: left;
+  height: 70vh;
+  margin: 5px 0;
+  padding: 20px 0;
+  border: 1px solid #004953;
+}
+table {
+  margin: 0 10px;
+}
+tbody {
+}
+th {
+  font-size: 18px;
+  font-weight: 450;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+.div4 {
+  width: 70%;
+  float: right;
+  height: 70vh;
+  border: 1px solid #004953;
+}
+a {
+  text-transform: uppercase;
+}
+.print {
+  margin: 0px 100px;
+  cursor: pointer;
+}
+@media print {
+  /* Hide other content that not print */
+  body * {
+    visibility: hidden;
+  }
+  /* display print area */
+  .print-container,
+  .print-container * {
+    visibility: visible;
+  }
+  /* adjust the position */
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+  }
+}

@@ -10,18 +10,12 @@ if (isset($_POST["submit"])) {
     mysqli_select_db($db, "food_odering_system");
     mysqli_query($db, "insert into registration_detail values('$username','$dob','$email','$contact')");
     mysqli_query($db, "insert into user_login_details values('$email','$password','user','active')");
+    mysqli_query($db, "insert into order_parent_tb values('$email','0','0')");
     $rem = mysqli_affected_rows($db);
     if ($rem) {
-       header("location:homepage.php?flag=0");;
+       header("location:index.html?flag=0");;
         
     }
     mysqli_close($db);
 }
 ?>
-<html>
-
-<head>
-   
-</head>
-
-</html>

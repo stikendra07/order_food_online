@@ -33,9 +33,7 @@ a {
 ::-webkit-scrollbar {
   width: 0;
 }
-.hidden {
-  display: none;
-}
+
 .container {
   width: fit-content;
   display: flex;
@@ -63,6 +61,7 @@ th {
   color: #f5f5f5;
   font-weight: 500;
   background-repeat: no-repeat;
+  user-select: none;
 }
 tr {
   padding: 0px 0px;
